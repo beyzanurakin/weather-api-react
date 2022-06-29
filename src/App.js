@@ -1,23 +1,21 @@
 import React from "react";
-import Forecast from "./Forecast";
-import { useGlobalContext } from "./context";
-import SearchBox from "./SearchBox";
+import { useEffect } from "react";
+import { useWeather } from "./context/weatherContext";
+import SearchBox from "./components/SearchBox"
+import Card from "./components/Card"
+
 
 function App() {
-  const { results } = useGlobalContext();
+  const weather = useWeather()
+  console.log(weather)
+  useEffect(() => {
+    weather.fetchCurrentUserLocationData();
+  }, [])
   return (
-    <div
-      className={
-        typeof results.main != "undefined"
-          ? results.main.temp > 16
-            ? "app warm"
-            : "app"
-          : "app"
-      }
-    >
+    <div>
       <main>
         <SearchBox />
-        <Forecast />
+        <Card />
       </main>
     </div>
   );

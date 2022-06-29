@@ -12,38 +12,7 @@ const AppProvider = ({ children }) => {
   const [query, setQuery] = useState("milas");
   const [results, setResults] = useState([]);
 
-  const dateBuilder = (d) => {
-    let months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    let days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    //Javascript date functions
-    let day = days[d.getDay()];
-    let date = d.getDay();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
 
-    return `${day} ${date} ${month} ${year}`;
-  };
 
   const handleSearch = (evt) => {
     setLoading(true);
@@ -67,7 +36,7 @@ const AppProvider = ({ children }) => {
         results,
         query,
         setQuery,
-        dateBuilder,
+
         handleSearch,
       }}
     >

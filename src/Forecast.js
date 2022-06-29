@@ -1,8 +1,8 @@
 import React from "react";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "./contextt";
 
 const Forecast = () => {
-  const { results, dateBuilder, loading } = useGlobalContext();
+  const { results, loading } = useGlobalContext();
   if (results.cod === "404") {
     return <h1>{results.message}</h1>;
   }
@@ -18,7 +18,7 @@ const Forecast = () => {
             <div className="location">
               {results.name}, {results.sys.country}
             </div>
-            <div className="date">{dateBuilder(new Date())}</div>
+
           </div>
           <div className="weather-box">
             <div className="temp">{Math.round(results.main.temp)}°c</div>

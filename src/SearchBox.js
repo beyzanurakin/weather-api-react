@@ -1,5 +1,5 @@
 import React from "react";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "./contextt";
 
 const SearchBox = () => {
   const { query, setQuery, handleSearch } = useGlobalContext();
