@@ -6,7 +6,7 @@ Open Weather API : https://openweathermap.org/api
 
 ## 🛠 Skills
 
-Javascript, HTML, CSS, React.js, Context API, Tailwind
+React.js, Redux, Redux-Thunk, Axios , Chakra-ui,
 
 ## Demo
 
