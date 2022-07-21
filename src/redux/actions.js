@@ -68,25 +68,3 @@ export const getWeatherByCity = (city, toast) => async (dispatch) => {
     myToast(toast, 'city weather data doesnt exist', 'error')
   }
 }
-
-export const syncData = (city, toast) => async (dispatch) => {
-  try {
-    let weatherData = await axios.get(
-      `/weather?q=${city}&appid=${weatherAppAPI}`
-    )
-    weatherData = weatherData.data
-    let { lon, lat } = weatherData
-    let forecastData = await axios.get(
-      `/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&units=metric&appid=${weatherAppAPI}`
-    )
-    forecastData = forecastData.data.daily
-    let payload = { weatherData, forecastData }
-    dispatch(getDataSuccess(payload))
-    setItem('weather', payload)
-    myToast(toast, 'Data sync successfully', 'success')
-  } catch (err) {
-    console.log(err)
-    dispatch(getDataError())
-    myToast(toast, 'City waether Data doesnt exist', 'error')
-  }
-}
