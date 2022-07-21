@@ -16,7 +16,6 @@ export const reducer = (state = initState, { type, payload }) => {
     case GET_DATA_LOADING:
       return { ...state, isLoading: true, isError: false }
     case GET_DATA_SUCCESS:
-      console.log(payload)
       return {
         ...state,
         isLoading: false,

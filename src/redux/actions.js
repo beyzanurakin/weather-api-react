@@ -32,7 +32,6 @@ export const getWeatherByLocation = (toast) => (dispatch) => {
       )
       forecastData = forecastData.data.daily
       let payload = { weatherData, forecastData }
-      console.log(payload)
       dispatch(getDataSuccess(payload))
       setItem('weather', payload)
       myToast(toast, 'Your location weather updated', 'success')

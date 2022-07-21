@@ -21,7 +21,6 @@ function Navbar() {
   const handleChange = () => {
     dispatch(getWeatherByCity(city, toast))
   }
-  console.log(cities)
 
   const handleLocationData = () => {
     dispatch(getWeatherByLocation(toast))
@@ -29,8 +28,6 @@ function Navbar() {
   const handleSelectChange = (e) => {
     let selectedCity = e.target.value
     dispatch(getWeatherByCity(selectedCity, toast))
-    console.log(selectedCity.toLowerCase())
-    // dispatch(getWeatherByCity())
   }
   return (
     <Flex
