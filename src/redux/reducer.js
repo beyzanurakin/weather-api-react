@@ -6,7 +6,7 @@ import {
 } from './actionTypes'
 
 const initState = {
-  isLoadingData: getItem('weather') ? false : true,
+  isLoading: getItem('weather') ? false : true,
   weatherData: getItem('weather') ? getItem('weather').weatherData : {},
   forecastData: getItem('weather') ? getItem('weather').forecastData : [],
   isError: false,
